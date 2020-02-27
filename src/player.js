@@ -9,14 +9,18 @@ class Player extends React.Component {
 
     render() {
 		let items = this.player.inventory.map((item) =>
-			<li><Item item={item} /></li>
+			<div className="flex-fill p-1 bg-light border"><Item item={item} /></div>
 		);
-
+		
         return (
-            <div>
-                {this.player.name}
-				{this.player.coins}
-				<ul>{items}</ul>
+            <div className="container">
+					<div>
+						Name: {this.player.name}
+					</div>
+					<div>
+						Coins: {this.player.coins}
+					</div>
+				<div className="d-flex flex-md-row flex-column rounded-sm border">{items}</div>
             </div>
         );
     }

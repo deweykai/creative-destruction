@@ -1,11 +1,18 @@
 import React from 'react';
 
 function Item({ item }) {
+	let quantityMessage;
+	if (item.quantity > 50) {
+		quantityMessage = '';
+	} else {
+		quantityMessage = ' x' + item.quantity;
+	}
+
     return (
-		<ul>
-		<li>{item.name}</li>
-		<li>{item.quantity}</li>
-		</ul>
+		<span className="align-middle">
+		{item.name} 
+		{quantityMessage}
+		</span>
     );
 }
 

@@ -6,17 +6,16 @@ class Market extends React.Component {
 		super(props);
 		this.items = props.items;
 		this.updatePlayer = props.updatePlayer;
-		console.log(props.updatePlayer);
 	}
 
 	render() {
 		const listings = this.items.map((item) =>
-			<li><Listing item={item} updatePlayer={this.updatePlayer} /></li>
+			<li className="list-group-item p-0 pl-3"><Listing item={item} updatePlayer={this.updatePlayer} /></li>
 		);
 		return (
 			<div>
-				<h1>Market</h1>
-				<ul>{listings}</ul>
+				<h2>Market</h2>
+				<ul className="list-group">{listings}</ul>
 			</div>
 		);
 	}

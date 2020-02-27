@@ -30,6 +30,7 @@ class Listing extends React.Component {
 
 	sell() {
 		if (this.item.sellPrice === 0) return;
+		if (this.item.name === 'bread' && this.item.quantity >= this.item.maxQuantity) return;
 		
 		this.updatePlayer(player => {
 			let playerItem = player.inventory.find(item => item.name === this.item.name);
@@ -48,8 +49,10 @@ class Listing extends React.Component {
         return (
             <div>
                 <Item item={this.item} />
-				<button onClick={this.buy}>{this.item.buyPrice}</button>
-				<button onClick={this.sell}>{this.item.sellPrice}</button>
+				<div className="btn-group float-right w-25">
+					<button onClick={this.buy} className="btn btn-sm btn-success">Buy: {this.item.buyPrice}</button>
+					<button onClick={this.sell} className="btn btn-sm btn-danger">Sell: {this.item.sellPrice}</button>
+				</div>
             </div>
         );
     }

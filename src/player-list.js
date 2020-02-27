@@ -1,26 +1,23 @@
 import React from 'react';
 import Player from './player.js';
 
-class PlayerList extends React.Component {
-	constructor(props) {
-		super(props);
-		this.players = props.players || [];
-	}
+function PlayerList({ players, idx }) {
+	players = players.map((player) =>
+		<li className={
+			"list-group-item " +
+			(player.deported ? 'disabled ' : '') +
+			(players.indexOf(player) === idx ? 'list-group-item-dark sticky-top' : '')
+		}><Player player={player} /></li>
+	);
 
-	render() {
-		const players = this.players.map((player) =>
-			<li><Player player={player} /></li>
-		);
-		
-		return (
-			<div>
-				<h1>Players</h1>
-				<ul>
-					{players}
-				</ul>
-			</div>
-		);
-	}
+	return (
+		<div>
+			<h2>Players</h2>
+			<ul className="list-group">
+				{players}
+			</ul>
+		</div>
+	);
 }
 
 export default PlayerList;
