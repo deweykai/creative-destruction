@@ -15,7 +15,7 @@ class Market extends React.Component {
 		return (
 			<div>
 				<h2>Market</h2>
-				<ul className="list-group">{listings}</ul>
+				<ul className="list-group list-group-flush">{listings}</ul>
 			</div>
 		);
 	}

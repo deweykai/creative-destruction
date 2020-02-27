@@ -49,8 +49,8 @@ class Listing extends React.Component {
             <div>
                 <Item item={this.item} />
 				<div className="btn-group float-right w-25">
-					<button onClick={this.buy} className="btn btn-sm btn-success">Buy: {this.item.buyPrice}</button>
-					<button onClick={this.sell} className="btn btn-sm btn-danger">Sell: {this.item.sellPrice}</button>
+					<button onClick={this.buy} className="btn btn-sm btn-success w-50">Buy: {this.item.buyPrice}</button>
+					<button onClick={this.sell} className="btn btn-sm btn-danger w-50">Sell: {this.item.sellPrice}</button>
 				</div>
             </div>
         );
