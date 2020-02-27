@@ -52,7 +52,7 @@ class Creative extends React.Component {
 		this.state = {
 			players: players,
 			items: items,
-			iPlayer: 0,
+			iPlayer: -1,
 		};
 
 		this.updatePlayer = this.updatePlayer.bind(this);
@@ -108,7 +108,7 @@ class Creative extends React.Component {
 		// update state
 		this.setState({
 			items: items,
-			iPlayer: 0,
+			iPlayer: -1,
 			players: players,
 		});
 	}

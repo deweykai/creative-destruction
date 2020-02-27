@@ -1,6 +1,5 @@
 import React from 'react';
 import Item from './item.js';
-import Price from './price.js';
 
 class Listing extends React.Component {
     constructor(props) {
