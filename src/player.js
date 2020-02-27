@@ -15,7 +15,7 @@ class Player extends React.Component {
         return (
             <div className="container">
 					<div>
-						Name: {this.player.name}
+						Name: {this.player.name} {this.player.deported ? ' (Deported)' : ''}
 					</div>
 					<div>
 						Coins: {this.player.coins}
