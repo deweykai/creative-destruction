@@ -1,15 +1,22 @@
 import React from 'react';
+import Item from './item.js';
 
 class Player extends React.Component {
     constructor(props) {
         super(props);
-        this.name = props.name;
+        this.player = props.player;
     }
 
     render() {
+		let items = this.player.inventory.map((item) =>
+			<li><Item item={item} /></li>
+		);
+
         return (
             <div>
-                {this.name}
+                {this.player.name}
+				{this.player.coins}
+				<ul>{items}</ul>
             </div>
         );
     }

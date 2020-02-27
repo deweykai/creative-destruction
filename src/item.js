@@ -1,8 +1,11 @@
 import React from 'react';
 
-function Item(props) {
+function Item({ item }) {
     return (
-        <div>{props.name}</div>
+		<ul>
+		<li>{item.name}</li>
+		<li>{item.quantity}</li>
+		</ul>
     );
 }
 
